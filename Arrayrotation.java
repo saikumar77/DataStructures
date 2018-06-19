@@ -10,6 +10,7 @@ class Arrayrotation {
 		int d = s.nextInt();
 		Arrayrotation obj = new Arrayrotation();
 		obj.leftrotate(array,d,n);
+		obj.printArray(array,n);
 	}
 
 	void leftrotate(int[] array,int d,int n) {
