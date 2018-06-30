@@ -51,6 +51,23 @@ class Arrayrotation {
 		reverseArray(array,0,n-1);
 	}
 
+	int findpivot(int[] array,int low, int high) {
+		if(low > high)
+			return -1;
+		if(low == high)
+			return low;
+		int mid = (low + high)/2;
+		if(array[mid] > array[mid + 1])
+			return mid;
+		if(array[mid - 1] > array[mid])
+			return mid -1;
+		if(array[low] > array[mid])
+			return findpivot(array,low,mid);
+
+		return findpivot(array,mid+1,high);
+
+	}
+
 	public static void main(String[] args) {
 		Scanner s  = new Scanner(System.in);
 		int n = s.nextInt();
